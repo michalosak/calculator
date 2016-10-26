@@ -1,3 +1,6 @@
+import sys
+import os
+
 def isanumber(a):
     boola= True
     try:
@@ -29,13 +32,38 @@ def checkoperator(operator):
         return False            
 
 
-no1=int(0)
+def helpsection():
 
+    if (len(sys.argv)>1):
+        if (sys.argv[1]=='--help'):
+            print()
+            print("================== HELP SECTION =================")
+            print()
+            print("Welcome User - SIMPLE CALCULATOR help ")
+            print()
+            print("SIMPLE CALCULATOR can make different operations on integer numbers, so remember to enter integer numbers")
+            print("Allowed operators: +, -, *, /")
+            print("To exit program enter letter in first number")
+            print()
+            print("Program should be bulletproof!!! But You can try to crash it! Good luck :)")
+            print("Coded by Michał Osak (Codecool Week A)")
+            print()
+            print("============== END OF HELP SECTION ==============")
+            print()
+            print()
+            return True
+    
+os.system('cls' if os.name=='nt' else 'clear')
+print()
 print("============ WELCOME IN SIMPLE CALCULATOR ============")
-
+   
+no1=int(0)
 
 while (isinteger(no1)==True):
       
+    if helpsection()==True:
+        break
+
     no1='' 
     print()
 
@@ -53,6 +81,7 @@ while (isinteger(no1)==True):
     if (isanumber(no1)==False):
         print()
         print("================ HAVE A NICE DAY! BYE! ===============")
+        print()
         break
     
     if (isinteger(no1)==True):
